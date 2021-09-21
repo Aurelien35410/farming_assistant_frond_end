@@ -1,0 +1,16 @@
+<router-outlet></router-outlet>
+<h1>Resultat de l'analyse</h1>
+<button id="back_page"><a routerLink="/phytosanitaryForm"><i class="fas fa-arrow-circle-left"></i> Retour</a></button>
+
+<div class="result_group">
+<div *ngFor="let phytosanitary of phytosanitaries">
+  <div class="result_item">
+  <h4><i class="fas fa-calendar-alt"></i> {{ displayDate(phytosanitary.day) }}</h4>
+  <h2 [className]="(displayGlobalResult(phytosanitary.windCondition, phytosanitary.temperatureCondition, phytosanitary.dryCondition, phytosanitary.dampAfterCondition, phytosanitary.day)>50?'txt-green' : 'txt-red')"> {{ displayGlobalResult(phytosanitary.windCondition, phytosanitary.temperatureCondition, phytosanitary.dryCondition, phytosanitary.dampAfterCondition, phytosanitary.day) }} %</h2>
+  <p [className]="(phytosanitary.windCondition? 'txt-green': 'txt-red')"><i class="fas fa-wind"></i> Vitesse du vent {{ phytosanitary.windData }} km/h</p>
+  <p [className]="(phytosanitary.temperatureCondition? 'txt-green': 'txt-red')"><i class="fas fa-thermometer-three-quarters"></i> Min: {{ phytosanitary.mintemperatureData }} km/h | Max: {{ phytosanitary.maxtemperatureData }} km/h </p>
+  <p [className]="(phytosanitary.dryCondition? 'txt-green': 'txt-red')"><i class="fas fa-tint-slash"></i> Probabilité de pluie: {{ phytosanitary.dryData }} % </p>
+  <p [className]="(phytosanitary.dampAfterCondition? 'txt-green': 'txt-red')"><i class="fas fa-tint"></i> Pluie sur les deux prochains jours: {{ displayDampAfter(phytosanitary.dampAfterCondition, phytosanitary.day)}} </p>
+</div>
+</div>
+</div>

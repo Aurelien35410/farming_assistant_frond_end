@@ -1,0 +1,42 @@
+h1{
+  text-align: center;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+#back_page{
+  background-color: #1976d2;
+  border: none;
+  border-radius: 10px;
+}
+
+#back_page:hover{
+  transform: scale(1.2);
+}
+
+.result_group{
+  display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.result_item {
+  text-align: center;
+  padding: 30px;
+  margin: 30px;
+  border-radius: 30px;
+  box-shadow: 5px 10px 18px #888888;
+  width: 258px;
+}
+
+.txt-green{
+    color: green;
+}
+
+.txt-red{
+  color: red;
+}

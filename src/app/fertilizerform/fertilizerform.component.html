@@ -1,0 +1,18 @@
+<router-outlet></router-outlet>
+<h1>Analyse météo pour épandage d'engrais</h1>
+<h2>Selectionnez votre ville</h2>
+
+<form [formGroup]="zipCodeForm" (ngSubmit)="submitZipCode()">
+  <input formControlName="zip_code" type="text" name="zip_code" id="zip_code" placeholder="Code Postal">
+  <input type="submit" id="zip_submit" value="Valider">
+</form>
+
+<form [formGroup] ="inseeCodeForm" (ngSubmit)="submitInseeCode()">
+  <select formControlName="insee_code" id="cities_list">
+      <option *ngFor="let city of cities"  value="{{city.code}}">{{city.nom}}</option>
+  </select>
+  <input type="submit" id="insee_submit" value="Lancer l'analyse">
+</form>
+
+<button id="back_page"><a routerLink="/"><i class="fas fa-arrow-circle-left"></i> Retour</a></button>
+

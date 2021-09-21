@@ -1,0 +1,52 @@
+h1{
+  text-align: center;
+}
+
+h2{
+  text-align: center;
+}
+
+form{
+  text-align: center;
+}
+
+input{
+  border-radius: 30px;
+}
+
+input[type=text] {
+  width: 230px;
+}
+
+input[type=submit]{
+    width: 150px;
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    margin-left: 10px;
+}
+
+input[type=submit]:hover{
+  transform: scale(1.2);
+}
+
+
+select{
+  border-radius: 30px;
+  width: 230px;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+#back_page{
+  background-color: #1976d2;
+  border: none;
+  border-radius: 10px;
+}
+
+#back_page:hover{
+  transform: scale(1.2);
+}

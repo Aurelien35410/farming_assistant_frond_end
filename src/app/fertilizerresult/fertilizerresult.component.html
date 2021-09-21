@@ -1,0 +1,15 @@
+<router-outlet></router-outlet>
+<h1>Resultat de l'analyse</h1>
+<button id="back_page"><a routerLink="/fertilizerForm"><i class="fas fa-arrow-circle-left"></i> Retour</a></button>
+
+<div class="result_group">
+<div *ngFor="let fertilizer of fertilizers">
+  <div class="result_item">
+  <h4><i class="fas fa-calendar-alt"></i> {{ displayDate(fertilizer.day) }}</h4>
+  <h2 [className]="(displayGlobalResult(fertilizer.windCondition, fertilizer.dryCondition, fertilizer.dampAfterCondition, fertilizer.day)>66?'txt-green' : 'txt-red')"> {{ displayGlobalResult(fertilizer.windCondition, fertilizer.dryCondition, fertilizer.dampAfterCondition, fertilizer.day) }} %</h2>
+  <p [className]="(fertilizer.windCondition? 'txt-green': 'txt-red')"><i class="fas fa-wind"></i> Vitesse du vent {{ fertilizer.windData }} km/h</p>
+  <p [className]="(fertilizer.dryCondition? 'txt-green': 'txt-red')"><i class="fas fa-tint-slash"></i> Probabilité de pluie: {{ fertilizer.dryData }} % </p>
+  <p [className]="(fertilizer.dampAfterCondition? 'txt-green': 'txt-red')"><i class="fas fa-tint"></i> Pluie sur les deux prochains jours: {{ displayDampAfter(fertilizer.dampAfterCondition, fertilizer.day)}} </p>
+</div>
+</div>
+</div>
